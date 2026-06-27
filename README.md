@@ -9,7 +9,7 @@ Legal and policy pages for INFINIACT products, served via GitHub Pages.
 | Product | Privacy | Terms |
 | --- | --- | --- |
 | IABar (browser extension) | [/iabar/privacy/](https://infiniact.github.io/docs/iabar/privacy/) | [/iabar/terms/](https://infiniact.github.io/docs/iabar/terms/) |
-| iaterm (terminal agent) | [/iaterm/privacy/](https://infiniact.github.io/docs/iaterm/privacy/) | [/iaterm/terms/](https://infiniact.github.io/docs/iaterm/terms/) |
+| IATerm (terminal agent) | [/iaterm/privacy/](https://infiniact.github.io/docs/iaterm/privacy/) | [/iaterm/terms/](https://infiniact.github.io/docs/iaterm/terms/) |
 
 ## Structure
 
