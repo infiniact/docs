@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IABar — Privacy Policy</title>
+    <link rel="stylesheet" href="../../assets/style.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="site"><a href="../../">← INFINIACT Legal</a></header>
+
+      <h1>IABar — Privacy Policy</h1>
+      <p class="meta">Effective: 27 June 2026 · INFINIACT CO., LTD</p>
+
+      <p class="lead">
+        <b>Short version.</b> IABar is a browser extension that runs an AI agent locally. You bring
+        your own LLM provider API key (BYOK). Your key, your conversations, and any page content you
+        attach are sent <b>directly from your browser to the LLM provider you choose</b> — never to
+        an INFINIACT server. IABar has no backend and no account. We do not sell your data, and we do
+        not run analytics or tracking by default.
+      </p>
+
+      <h2>1. Who we are</h2>
+      <p>
+        IABar (“the extension”) is published by INFINIACT CO., LTD (“INFINIACT”, “we”). This policy
+        explains what the extension does with your data. It does not cover the third-party LLM
+        providers you choose to connect (see §5).
+      </p>
+
+      <h2>2. Our model: bring-your-own-key, local-first</h2>
+      <p>
+        IABar does not have its own AI service or server. It calls the API of the LLM provider
+        <em>you</em> configure (e.g. Anthropic, DeepSeek), using <em>your</em> API key. All requests
+        go directly from your browser to that provider. INFINIACT operates no proxy, relay, or
+        backend that your data passes through.
+      </p>
+
+      <h2>3. What data the extension handles, and where it goes</h2>
+      <table>
+        <tr><th>Data</th><th>Where it’s stored</th><th>Where it’s sent</th></tr>
+        <tr>
+          <td>Your provider <b>API key</b></td>
+          <td>Locally, in the browser’s <code>chrome.storage.local</code>, on your device.</td>
+          <td>Only to your chosen provider’s API, to authenticate your requests. Never to INFINIACT.</td>
+        </tr>
+        <tr>
+          <td><b>Chat messages</b> you type</td>
+          <td>Locally, as conversation history in <code>chrome.storage.local</code>.</td>
+          <td>To your chosen provider, to generate a response.</td>
+        </tr>
+        <tr>
+          <td><b>Page content</b> you attach with <code>@</code></td>
+          <td>Held in memory for the request; not persisted by us beyond the conversation history you keep locally.</td>
+          <td>To your chosen provider, only as context for the message you send. Read <b>only</b> when you reference a page and grant that site’s permission (see §4).</td>
+        </tr>
+      </table>
+      <p>
+        IABar has <b>no user account</b>, collects <b>no name, email, or identifier</b>, and sends
+        <b>nothing to INFINIACT’s servers</b> (we don’t operate any for this purpose).
+      </p>
+
+      <h2>4. Page access is on demand, not always-on</h2>
+      <p>
+        IABar does <b>not</b> install a content script on your pages and does <b>not</b> request
+        broad “read all your data on all websites” access up front. It reads a page only when you
+        explicitly reference it with <code>@</code> in the chat. At that moment the browser asks you
+        to grant access to <em>that specific site</em>; only after you allow it does IABar read that
+        page (its title, URL, your selection, and visible text) to use as context. You can revoke a
+        site’s access at any time in your browser’s extension settings.
+      </p>
+
+      <h2>5. Third-party LLM providers</h2>
+      <p>
+        When you send a message, the relevant data (your messages, attached page content, and your
+        key for authentication) is transmitted to the LLM provider you selected. That provider’s
+        handling of your data is governed by <b>their</b> privacy policy and terms, not ours:
+      </p>
+      <ul>
+        <li>Anthropic — <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noreferrer">anthropic.com/legal/privacy</a></li>
+        <li>DeepSeek — <a href="https://platform.deepseek.com/" target="_blank" rel="noreferrer">platform.deepseek.com</a> (see their privacy terms)</li>
+      </ul>
+      <p>Choose a provider whose data practices you are comfortable with.</p>
+
+      <h2>6. Permissions and why we ask for them</h2>
+      <table>
+        <tr><th>Permission</th><th>Why</th></tr>
+        <tr><td><code>storage</code></td><td>Save your settings and conversation history locally on your device.</td></tr>
+        <tr><td><code>sidePanel</code></td><td>Show the IABar UI in the browser side panel.</td></tr>
+        <tr><td><code>activeTab</code>, <code>tabs</code>, <code>scripting</code></td><td>Let you pick a tab to <code>@</code>-reference and read its content on demand (see §4).</td></tr>
+        <tr><td>Host access to <code>api.anthropic.com</code>, <code>api.deepseek.com</code></td><td>Call the LLM provider’s API directly from your browser.</td></tr>
+        <tr><td>Optional host access (<code>*://*/*</code>)</td><td>Requested <b>at runtime, per site, only when you <code>@</code>-reference a page</b> — not granted up front.</td></tr>
+      </table>
+
+      <h2>7. Storage and retention</h2>
+      <p>
+        Settings and conversations are stored locally on your device via the browser’s extension
+        storage. They stay until you delete a conversation in IABar, clear the extension’s data, or
+        remove the extension. We have no copy of them.
+      </p>
+
+      <h2>8. Analytics and tracking</h2>
+      <p>
+        IABar does not include third-party analytics, advertising, or tracking, and is off by default
+        for any optional diagnostics. We do not build user profiles and do not sell or share data
+        with data brokers.
+      </p>
+
+      <h2>9. Children</h2>
+      <p>IABar is a general productivity tool and is not directed to children under 13.</p>
+
+      <h2>10. Changes</h2>
+      <p>
+        We may update this policy as the extension evolves. Material changes will be reflected here
+        with a new effective date.
+      </p>
+
+      <h2>11. Contact</h2>
+      <p>
+        Questions about this policy: <a href="mailto:xudt@infiniact.com">xudt@infiniact.com</a> ·
+        <a href="https://www.infiniact.com">www.infiniact.com</a>
+      </p>
+
+      <footer class="site">© 2026 INFINIACT CO., LTD</footer>
+    </div>
+  </body>
+</html>
