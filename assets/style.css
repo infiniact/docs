@@ -65,6 +65,19 @@ th, td { border: 1px solid var(--border); padding: 8px 10px; text-align: left; v
 th { background: var(--code-bg); }
 hr { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
 footer.site { color: var(--dim); font-size: 13px; margin-top: 40px; border-top: 1px solid var(--border); padding-top: 14px; }
+/* Language toggle */
+.langbar { display: flex; justify-content: flex-end; margin-bottom: 18px; }
+.langbar button {
+  background: none; border: 1px solid var(--border); color: var(--dim);
+  border-radius: 999px; padding: 4px 12px; font-size: 13px; cursor: pointer;
+  font-family: inherit;
+}
+.langbar button:hover { color: var(--accent); border-color: var(--accent); }
+/* Product hero / slogan */
+.slogan { font-size: 17px; font-weight: 600; margin: 4px 0 4px; line-height: 1.4; }
+.tagline { color: var(--dim); font-size: 14px; margin: 0 0 6px; }
+.ver { color: var(--dim); font-size: 12px; font-weight: 500;
+  border: 1px solid var(--border); border-radius: 999px; padding: 1px 8px; margin-left: 8px; }
 .cards { display: grid; gap: 12px; grid-template-columns: 1fr 1fr; margin-top: 18px; }
 .card { border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; text-decoration: none; color: inherit; display: block; }
 .card:hover { border-color: var(--accent); }

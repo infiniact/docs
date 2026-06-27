@@ -3,29 +3,79 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>INFINIACT — Legal & Policies</title>
+    <title>INFINIACT — Legal &amp; Policies</title>
     <link rel="stylesheet" href="assets/style.css" />
   </head>
   <body>
     <div class="wrap">
-      <h1>INFINIACT — Legal &amp; Policies</h1>
-      <p class="meta">Privacy policies and terms of service for INFINIACT products.</p>
+      <div class="langbar">
+        <button id="lang-toggle" type="button"></button>
+      </div>
 
-      <h2>IABar</h2>
-      <p class="meta">Your AI agent in the browser (Chrome extension).</p>
+      <h1 data-en="INFINIACT — Legal &amp; Policies" data-zh="INFINIACT — 法律与政策"></h1>
+      <p class="meta"
+         data-en="Privacy policies and terms of service for INFINIACT products."
+         data-zh="INFINIACT 各产品的隐私政策与服务条款。"></p>
+
+      <h2>IABar <span class="ver">v0.1.0</span></h2>
+      <p class="slogan"
+         data-en="A real AI agent, right in your browser."
+         data-zh="浏览器里，一个真正能动手的 AI Agent。"></p>
+      <p class="tagline"
+         data-en="Your keys, your provider, your data — never ours."
+         data-zh="自带 Key，自选模型，数据不经我手。"></p>
       <div class="cards">
-        <a class="card" href="iabar/privacy/"><b>Privacy Policy</b><span>iabar/privacy</span></a>
-        <a class="card" href="iabar/terms/"><b>Terms of Service</b><span>iabar/terms</span></a>
+        <a class="card" href="iabar/privacy/">
+          <b data-en="Privacy Policy" data-zh="隐私政策"></b><span>iabar/privacy</span>
+        </a>
+        <a class="card" href="iabar/terms/">
+          <b data-en="Terms of Service" data-zh="服务条款"></b><span>iabar/terms</span>
+        </a>
       </div>
 
       <h2>iaterm</h2>
-      <p class="meta">The desktop AI coding agent.</p>
+      <p class="slogan"
+         data-en="A real AI coding agent, right on your desktop."
+         data-zh="桌面上，一个真正能动手的 AI 编程 Agent。"></p>
+      <p class="tagline"
+         data-en="Runs locally, with your own key. Your code stays yours."
+         data-zh="本地运行，自带 Key，代码始终是你的。"></p>
       <div class="cards">
-        <a class="card" href="iaterm/privacy/"><b>Privacy Policy</b><span>iaterm/privacy</span></a>
-        <a class="card" href="iaterm/terms/"><b>Terms of Service</b><span>iaterm/terms</span></a>
+        <a class="card" href="iaterm/privacy/">
+          <b data-en="Privacy Policy" data-zh="隐私政策"></b><span>iaterm/privacy</span>
+        </a>
+        <a class="card" href="iaterm/terms/">
+          <b data-en="Terms of Service" data-zh="服务条款"></b><span>iaterm/terms</span>
+        </a>
       </div>
 
       <footer class="site">© 2026 INFINIACT CO., LTD</footer>
     </div>
+
+    <script>
+      (function () {
+        var KEY = 'infiniact-lang';
+        function pick() {
+          var saved = localStorage.getItem(KEY);
+          if (saved === 'en' || saved === 'zh') return saved;
+          return (navigator.language || 'en').toLowerCase().indexOf('zh') === 0 ? 'zh' : 'en';
+        }
+        function apply(lang) {
+          document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+          document.querySelectorAll('[data-en]').forEach(function (el) {
+            el.innerHTML = el.getAttribute('data-' + lang);
+          });
+          // Toggle shows the OTHER language you can switch to.
+          document.getElementById('lang-toggle').textContent = lang === 'zh' ? 'EN' : '中文';
+          localStorage.setItem(KEY, lang);
+        }
+        var current = pick();
+        apply(current);
+        document.getElementById('lang-toggle').addEventListener('click', function () {
+          current = current === 'zh' ? 'en' : 'zh';
+          apply(current);
+        });
+      })();
+    </script>
   </body>
 </html>
